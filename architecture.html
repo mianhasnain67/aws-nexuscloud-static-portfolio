@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how NexusCloud's serverless AWS website architecture delivers static content securely around the world.">
+    <title>Architecture | NexusCloud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">NexusCloud <span aria-hidden="true">⚡</span></a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="architecture.html" aria-current="page">Architecture</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <div class="badge">How it works</div>
+            <h1>Simple origin. Global reach.</h1>
+            <p>A serverless delivery path brings static content from a protected storage origin to visitors through a global edge network.</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">A request, step by step</h2>
+            <ol class="architecture-flow">
+                <li>
+                    <strong>01 · Visitor</strong>
+                    <span>A user opens your custom domain in a browser.</span>
+                </li>
+                <li>
+                    <strong>02 · Route 53</strong>
+                    <span>DNS routes the domain to the CloudFront distribution.</span>
+                </li>
+                <li>
+                    <strong>03 · CloudFront</strong>
+                    <span>The edge network serves a cached response over HTTPS when available.</span>
+                </li>
+                <li>
+                    <strong>04 · Private S3 origin</strong>
+                    <span>On a cache miss, CloudFront retrieves the requested asset from S3 using Origin Access Control.</span>
+                </li>
+            </ol>
+
+            <div class="grid architecture-details">
+                <article class="card">
+                    <h3>Secure delivery</h3>
+                    <p>CloudFront provides the public delivery layer, while Origin Access Control lets the S3 bucket remain private to direct visitors.</p>
+                </article>
+                <article class="card">
+                    <h3>Managed HTTPS</h3>
+                    <p>A certificate from AWS Certificate Manager can secure the custom domain at the CloudFront distribution.</p>
+                </article>
+                <article class="card">
+                    <h3>Fewer moving parts</h3>
+                    <p>Static assets can be delivered without managing web servers, while caching helps reduce repeated origin requests.</p>
+                </article>
+            </div>
+
+            <div class="page-cta">
+                <h2>Explore the services</h2>
+                <p>See the capabilities that support this delivery setup.</p>
+                <a class="text-link" href="services.html">Browse services <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 NexusCloud Solutions. Deployed on AWS Serverless Infrastructure.</p>
+    </footer>
+</body>
+</html>
